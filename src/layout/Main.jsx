@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
+import HeaderTop from "../components/HeaderTop/HeaderTop";
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
         <Header></Header>
       </div>
       <div className="flex-1">
+        <HeaderTop></HeaderTop>
         <Outlet></Outlet>
       </div>
     </div>

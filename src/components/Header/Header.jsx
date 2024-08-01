@@ -9,10 +9,10 @@ import settingsIcon from "../../assets/icons/Setting.png";
 
 const Header = () => {
   return (
-    <div className="py-12 ">
+    <div className="py-12 border-r">
       <h2 className="text-[40px] mb-10 pl-28 text-[#4285F3]">LOGO</h2>
       <ul className="flex flex-col   items-start text-[#5C635A]">
-        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-lg  text-left ">
+        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-[16px]  text-left ">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -21,7 +21,7 @@ const Header = () => {
             <span>Home</span>
           </Link>
         </li>
-        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-lg   text-left">
+        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-[16px]   text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -30,7 +30,7 @@ const Header = () => {
             <span>New Listing</span>
           </Link>
         </li>
-        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-lg  text-left">
+        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-[16px]  text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -39,7 +39,7 @@ const Header = () => {
             <span>Search</span>
           </Link>
         </li>
-        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-lg  text-left">
+        <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-[16px]  text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -48,7 +48,7 @@ const Header = () => {
             <span>About</span>
           </Link>
         </li>
-        <li className="-ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-lg   text-left">
+        <li className="-ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-[16px]   text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -58,7 +58,7 @@ const Header = () => {
           </Link>
         </li>
         <hr className="my-5 w-4/5 ml-10" />
-        <li className="mb-2 -ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-lg   text-left">
+        <li className="mb-2 -ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-[16px]   text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
@@ -67,7 +67,7 @@ const Header = () => {
             <span>Help Center</span>
           </Link>
         </li>
-        <li className="mb-2 -ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-lg   text-left">
+        <li className="mb-2 -ml-[2px]  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-[16px]   text-left">
           <Link className="flex gap-x-4 items-center justify-center" to="">
             <span>
               {" "}
