@@ -1,0 +1,50 @@
+[
+  {
+    "image": "https://i.ibb.co/tKX5TZV/image-116.png",
+    "address": "123 Elm Street, New York",
+    "contact": {
+      "phone": "(123) 456-7890",
+      "email": "contact1@example.com"
+    }
+  },
+  {
+    "image": "https://i.ibb.co/88TkJfH/image-117.png",
+    "address": "789 Maple Drive, NY",
+    "contact": {
+      "phone": "(234) 567-8901",
+      "email": "contact2@example.com"
+    }
+  },
+  {
+    "image": "https://i.ibb.co/Lz60ZML/image-118.png",
+    "address": "Pine Street, San Fran",
+    "contact": {
+      "phone": "(345) 678-9012",
+      "email": "contact3@example.com"
+    }
+  },
+  {
+    "image": "https://i.ibb.co/8NSRFjC/image-119.png",
+    "address": "567 Cedar Lane, Miami",
+    "contact": {
+      "phone": "(456) 789-0123",
+      "email": "contact4@example.com"
+    }
+  },
+  {
+    "image": "https://i.ibb.co/jwnsmTF/image-120.png",
+    "address": "202 Pine St, Springfield, IL 62705",
+    "contact": {
+      "phone": "(567) 890-1234",
+      "email": "contact5@example.com"
+    }
+  },
+  {
+    "image": "https://i.ibb.co/yP90jQz/image-121.png",
+    "address": "303 Cedar St, Springfield, IL 62706",
+    "contact": {
+      "phone": "(678) 901-2345",
+      "email": "contact6@example.com"
+    }
+  }
+]

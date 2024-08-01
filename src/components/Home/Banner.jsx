@@ -4,6 +4,7 @@ const Banner = () => {
   return (
     <div className="px-[30px] pt-[30px] ">
       <div className="bg-white p-[30px] rounded-[10px] flex gap-10">
+        {/* text part */}
         <div className="font-medium">
           <h4 className="text-xl">
             I&apos;m Looking for Massage Therapist Near...
@@ -26,6 +27,8 @@ const Banner = () => {
             </button>
           </div>
         </div>
+
+        {/* image part */}
         <div
           className="flex justify-end"
           style={{
