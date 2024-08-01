@@ -1,6 +1,7 @@
 import { CiLogin } from "react-icons/ci";
 import { FaRegBell } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import loginAvatar from '../../assets/images/login_avatar.png'
 
 const HeaderTop = () => {
   return (
@@ -10,7 +11,7 @@ const HeaderTop = () => {
         <div className="flex gap-3 items-center">
           <div className="avatar online">
             <div className="w-10 rounded-full">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              <img src={loginAvatar} />
             </div>
           </div>
           <div>
