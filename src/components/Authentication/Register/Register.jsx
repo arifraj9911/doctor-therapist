@@ -1,6 +1,6 @@
 import loginImage from "../../../assets/images/login.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthContext";
 import toast from "react-hot-toast";
@@ -10,6 +10,7 @@ const Register = () => {
   const [passView, setPassView] = useState(false);
   const [confirmPassView, setConfirmPassView] = useState(false);
   const [checkTerms, setCheckTerms] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -27,9 +28,10 @@ const Register = () => {
         .then((res) => {
           console.log(res.user);
           if (res.user) {
-            localStorage.setItem("userInfo",JSON.stringify({ name, email }));
+            localStorage.setItem("userInfo", JSON.stringify({ name, email }));
             toast.success("Account Create Successfully");
             form.reset();
+            navigate("/");
           }
         })
         .catch((err) => toast.error(err.message));

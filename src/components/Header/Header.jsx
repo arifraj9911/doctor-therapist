@@ -40,7 +40,10 @@ const Header = () => {
           </Link>
         </li>
         <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black  text-[16px]  text-left">
-          <Link className="flex gap-x-4 items-center justify-center" to="">
+          <Link
+            className="flex gap-x-4 items-center justify-center"
+            to="/about"
+          >
             <span>
               {" "}
               <img src={aboutIcon} alt="home" />

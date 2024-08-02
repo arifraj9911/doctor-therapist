@@ -1,7 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../assets/images/login.png";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthContext";
 import toast from "react-hot-toast";
@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   const [passView, setPassView] = useState(false);
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -22,6 +24,7 @@ const Login = () => {
         console.log(res.user);
         if (res.user) {
           toast.success("Login Successfully");
+          navigate(location?.state ? location?.state : "/");
           form.reset();
         }
       })
@@ -33,6 +36,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("Login Successfully");
+        navigate(location?.state ? location?.state : "/");
       })
       .catch((err) => toast.error(err.message));
   };
