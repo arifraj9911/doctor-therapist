@@ -7,8 +7,15 @@ import aboutIcon from "../../assets/icons/Iconly_Light_Paper.png";
 import favoriteIcon from "../../assets/icons/favorite.png";
 import infoIcon from "../../assets/icons/info.png";
 import settingsIcon from "../../assets/icons/Setting.png";
+import { CiLogin } from "react-icons/ci";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthContext";
+import loginInfo from "../../assets/images/login_avatar.png";
 
 const HeaderDrawer = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  console.log(userInfo);
   return (
     <div className="drawer drawer-end">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -21,15 +28,17 @@ const HeaderDrawer = () => {
         ></label>
 
         <ul className=" bg-base-200   w-60 min-h-[500px]   text-[#5C635A]">
-          <div className="bg-[#156BCA]  h-52 flex text-right pr-4 justify-end pb-4 flex-col items-end text-black">
+          <div className="bg-[#156BCA]  h-36 flex text-right pr-4 justify-end pb-4 flex-col items-end text-black">
             <div className="avatar online">
               <div className="w-14 rounded-full">
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                <img src={user?.photoURL || loginInfo} />
               </div>
             </div>
             <div className="">
-              <h4 className="text-[16px] text-white">Arif Hossain</h4>
-              <p className="text-[10px]">arif.raj9911@gmail.com</p>
+              <h4 className="text-[16px] text-white">
+                {user?.displayName || userInfo?.name}
+              </h4>
+              <p className="text-[10px]">{user?.email}</p>
             </div>
           </div>
           <div className="py-6 pr-4">
@@ -99,6 +108,22 @@ const HeaderDrawer = () => {
                 </span>
                 <span>Settings</span>
               </Link>
+            </li>
+            <li className="   w-full flex py-3 pl-4 hover:border-l-2 hover:border-l-black hover:bg-[#D5E9FF] hover:text-black text-[16px]   text-left">
+              {user?.email ? (
+                <button
+                  onClick={() => logOut()}
+                  className="flex  font-semibold items-center text-[18px] text-[#F15E4A] gap-x-2"
+                >
+                  <CiLogin className="text-4xl text-[#F15E4A] font-bold bg-[#FFECEA] rounded-full p-1" />
+                  <Link to="/login">Log Out</Link>
+                </button>
+              ) : (
+                <button className="flex  font-semibold items-center text-[18px] text-[#F15E4A] gap-x-2">
+                  <CiLogin className="text-4xl text-[#F15E4A] font-bold bg-[#FFECEA] rounded-full p-1" />
+                  <Link to="/login">Login</Link>
+                </button>
+              )}
             </li>
           </div>
         </ul>

@@ -1,17 +1,15 @@
-import { FcGoogle } from "react-icons/fc";
-import loginImage from "../../../assets/images/login.png";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthContext";
 import toast from "react-hot-toast";
-import ResponsiveLogin from "../../ResponsiveLogin/ResponsiveLogin";
+import { FcGoogle } from "react-icons/fc";
 
-const Login = () => {
+const LoginModal = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   const [passView, setPassView] = useState(false);
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -45,20 +43,13 @@ const Login = () => {
   const handleViewPassword = () => {
     setPassView(!passView);
   };
-
-  // console.log(passView)
-
   return (
-    <div>
-      <div className="md:hidden">
-        <ResponsiveLogin></ResponsiveLogin>
-      </div>
-      <div className="max-w-screen-xl hidden md:block mx-auto ">
-      <div className="flex justify-between gap-20 p-20">
-        <div className="w-1/2">
-          <h2 className="text-[40px] text-[#4285F3]">LOGO</h2>
-          <h4 className="text-3xl my-3 font-bold">Log In To Your Account</h4>
-          <p>Welcome Back! Select a method to log in:</p>
+    <dialog id="my_modal_3" className="modal modal-bottom sm:modal-middle">
+      <div className="modal-box text-center">
+        <h3 className="font-bold text-2xl">Sign In</h3>
+        <p className=" text-sm">Fill in your information</p>
+
+        <div className="text-left">
           <div className="flex gap-6  items-center mt-6">
             <div
               onClick={handleGoogleLogin}
@@ -73,7 +64,6 @@ const Login = () => {
             </div>
           </div>
           <div className="divider my-8">or Continue with Email</div>
-          {/* login form */}
           <form onSubmit={handleSignIn}>
             <div className="flex flex-col gap-1">
               <label className="text-[16px] font-semibold" htmlFor="email">
@@ -142,18 +132,12 @@ const Login = () => {
             </p>
           </div>
         </div>
-        {/* login sidebar image */}
-        <div className="w-4/5 relative">
-          <img className="w-4/5 mx-auto blur-[6px]" src={loginImage} alt="" />
-          <p className="w-1/3 bg-black text-white p-5 rounded-lg absolute top-72 left-52 opacity-70 text-[16px]">
-            <span className="text-[#156BCA]">Sign In</span> to view all the
-            message therapist
-          </p>
-        </div>
       </div>
-    </div>
-    </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
   );
 };
 
-export default Login;
+export default LoginModal;
