@@ -2,7 +2,7 @@ import bannerBg from "../../assets/images/banner-bg.png";
 import bannerimg from "../../assets/images/banner_img.png";
 const Banner = () => {
   return (
-    <div className="px-[30px] pt-[30px] ">
+    <div className="px-[30px] pt-[30px] hidden md:block">
       <div className="bg-white p-[30px] rounded-[10px] flex gap-10">
         {/* text part */}
         <div className="font-medium">

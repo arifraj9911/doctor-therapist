@@ -5,7 +5,7 @@ const FeaturedTherapist = () => {
  
 
   return (
-    <div className="my-[30px] px-[30px]">
+    <div className="my-[30px] px-[30px] hidden md:block">
       <h4 className="text-lg mb-[18px] font-medium">Featured Therapist</h4>
       {/* <SliderTherapist></SliderTherapist> */}
 

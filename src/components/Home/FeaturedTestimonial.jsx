@@ -11,7 +11,7 @@ const FeaturedTestimonial = () => {
       .then((data) => setTestimonials(data));
   }, []);
   return (
-    <div className="mb-[30px]">
+    <div className="mb-[30px] hidden md:block">
       <h2 className="text-lg font-medium mb-4">Featured Testimonial</h2>
       <div className="bg-white rounded-lg p-[30px]">
         <div className="grid grid-rows-2   gap-5">

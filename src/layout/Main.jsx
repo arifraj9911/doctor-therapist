@@ -15,11 +15,11 @@ const Main = () => {
       ) : location.pathname === "/register" ? (
         <Register></Register>
       ) : (
-        <div className="flex">
-          <div className="w-1/4 ">
+        <div className="md:flex">
+          <div className="w-1/4 hidden md:block">
             <Header></Header>
           </div>
-          <div className="flex-1">
+          <div className="md:flex-1">
             <HeaderTop></HeaderTop>
             <Outlet></Outlet>
           </div>

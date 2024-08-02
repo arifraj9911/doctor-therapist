@@ -9,7 +9,7 @@ import settingsIcon from "../../assets/icons/Setting.png";
 
 const Header = () => {
   return (
-    <div className="py-12 border-r">
+    <div className="py-12 border-r hidden md:block">
       <h2 className="text-[40px] mb-10 pl-28 text-[#4285F3]">LOGO</h2>
       <ul className="flex flex-col   items-start text-[#5C635A]">
         <li className="mb-2  w-full flex pl-16 py-2  hover:bg-[#D5E9FF] hover:text-black text-[16px]  text-left ">
