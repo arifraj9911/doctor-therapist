@@ -1,9 +1,18 @@
 import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../assets/images/login.png";
-import { FaFacebook } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
+  const [passView, setPassView] = useState(false);
+
+  const handleViewPassword = () => {
+    setPassView(!passView);
+  };
+
+  // console.log(passView)
+
   return (
     <div className="max-w-screen-xl mx-auto ">
       <div className="flex justify-between gap-20 p-20">
@@ -36,17 +45,30 @@ const Login = () => {
                 id=""
               />
             </div>
-            <div className="flex flex-col gap-1 mt-6">
+            <div className="flex flex-col gap-1 mt-6 relative">
               <label className="text-[16px] font-semibold" htmlFor="password">
                 Password
               </label>
               <input
-                type="password"
+                type={`${passView ? "text" : "password"}`}
                 className="input input-bordered outline-none focus:outline-none btn-md"
                 name="email"
                 placeholder="Enter your password"
                 id=""
               />
+              <span className="absolute right-4 top-[42px]">
+                {passView ? (
+                  <FaEyeSlash
+                    onClick={handleViewPassword}
+                    className="text-xl"
+                  ></FaEyeSlash>
+                ) : (
+                  <FaEye
+                    onClick={handleViewPassword}
+                    className="text-xl"
+                  ></FaEye>
+                )}
+              </span>
             </div>
             <div className="flex justify-between mt-1">
               <div className="space-x-2">
@@ -75,6 +97,7 @@ const Login = () => {
             </p>
           </div>
         </div>
+        {/* login sidebar image */}
         <div className="w-4/5 relative">
           <img className="w-4/5 mx-auto blur-[6px]" src={loginImage} alt="" />
           <p className="w-1/3 bg-black text-white p-5 rounded-lg absolute top-72 left-52 opacity-70 text-[16px]">
