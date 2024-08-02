@@ -9,7 +9,7 @@ const Home = () => {
         <div className="bg-[#EEF2F5] min-h-screen">
             <Banner></Banner>
             <FeaturedTherapist></FeaturedTherapist>
-            <div className="grid grid-cols-2 justify-between mb-7 px-[30px]">
+            <div className="grid grid-cols-2 justify-between mb-7 gap-[30px] px-[30px]">
                 <FeaturedTestimonial></FeaturedTestimonial>
                 <PopularCites></PopularCites>
             </div>
