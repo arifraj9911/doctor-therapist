@@ -35,8 +35,8 @@ const SliderTherapist = () => {
         }}
       >
         {therapist.map((user, index) => (
-          <div key={index} className=" overflow-hidden flex flex-shrink-0 p-2">
-            <div className="card card-compact border max-w-max flex flex-col bg-base-100 h-full shadow-xl">
+          <div key={index} className=" overflow-hidden  flex flex-shrink-0 p-2">
+            <div className="card card-compact  border max-w-max flex flex-col bg-base-100 h-full shadow-xl">
               <figure className="h-40">
                 <img
                   src={user.image}
@@ -48,7 +48,7 @@ const SliderTherapist = () => {
                 <h2 className="card-title text-[14px] px-4 pt-2 pb-1">
                   {user.name}
                 </h2>
-                <div className="pl-[18px] space-y-2">
+                <div className="pl-[18px] space-y-2 text-[#5C635A]">
                   <p className="text-xs flex items-center gap-2">
                     <FaLocationDot />
                     {user.address}
@@ -70,13 +70,13 @@ const SliderTherapist = () => {
       </div>
       <button
         onClick={prevSlide}
-        className="absolute left-0 bg-[#D4E9FF] top-1/2 transform -translate-y-1/2   px-2 py-1 ml-1 text-black text-3xl w-11 rounded-full hover:bg-[#156BCA] hover:text-white"
+        className="absolute left-0 bg-[#D4E9FF] top-1/2 transform -translate-y-1/2   px-2 py-1 ml-1 text-black text-3xl w-11 rounded-full duration-200 ease-in-out hover:bg-[#156BCA] hover:text-white"
       >
         &lt;
       </button>
       <button
         onClick={nextSlide}
-        className="absolute bg-[#D4E9FF] right-0 top-1/2 transform -translate-y-1/2 hover:bg-[#156BCA] hover:text-white  px-2 py-1 mr-1 text-black text-3xl w-11 rounded-full"
+        className="absolute bg-[#D4E9FF] right-0 top-1/2 transform -translate-y-1/2 hover:bg-[#156BCA] duration-200 ease-in-out hover:text-white  px-2 py-1 mr-1 text-black text-3xl w-11 rounded-full"
       >
         &gt;
       </button>
