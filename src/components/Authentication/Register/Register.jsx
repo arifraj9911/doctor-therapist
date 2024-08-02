@@ -1,12 +1,38 @@
 import loginImage from "../../../assets/images/login.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../provider/AuthContext";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const [passView, setPassView] = useState(false);
   const [confirmPassView, setConfirmPassView] = useState(false);
   const [checkTerms, setCheckTerms] = useState(false);
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirm_password.value;
+
+    if (password !== confirmPassword) {
+      return toast.error("password did not match");
+    } else {
+      createUser(email, password)
+        .then((res) => {
+          console.log(res.user);
+          if (res.user) {
+            toast.success("Account Create Successfully");
+            form.reset();
+          }
+        })
+        .catch((err) => toast.error(err.message));
+    }
+  };
 
   const handleViewPassword = () => {
     setPassView(!passView);
@@ -32,7 +58,7 @@ const Register = () => {
           </p>
 
           {/* login form */}
-          <form className="mt-6">
+          <form onSubmit={handleSignup} className="mt-6">
             <div className="flex flex-col gap-1">
               <label className="text-[16px] font-semibold" htmlFor="email">
                 Name
@@ -125,6 +151,7 @@ const Register = () => {
 
             <div className="mt-10 w-3/4 mx-auto">
               <button
+                type="submit"
                 disabled={checkTerms === false}
                 className={`px-4 py-2 w-full text-[16px] rounded-[10px] text-white  bg-[#156BCA] ${
                   !checkTerms && "bg-[#6ea3db] cursor-not-allowed"

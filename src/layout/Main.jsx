@@ -3,6 +3,7 @@ import Header from "../components/Header/Header";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import Login from "../components/Authentication/Login/Login";
 import Register from "../components/Authentication/Register/Register";
+import { Toaster } from "react-hot-toast";
 
 const Main = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const Main = () => {
           </div>
         </div>
       )}
+       <Toaster />
     </div>
   );
 };
