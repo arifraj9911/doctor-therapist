@@ -20,15 +20,6 @@ const HeaderDrawer = () => {
           className="drawer-overlay"
         ></label>
 
-        {/* <ul className="menu bg-base-200 text-base-content menu">
-          
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-        </ul> */}
         <ul className=" bg-base-200   w-60 min-h-[500px]   text-[#5C635A]">
           <div className="bg-[#156BCA]  h-52 flex text-right pr-4 justify-end pb-4 flex-col items-end text-black">
             <div className="avatar online">
