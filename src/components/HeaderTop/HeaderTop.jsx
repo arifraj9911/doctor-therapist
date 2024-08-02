@@ -13,7 +13,7 @@ const HeaderTop = () => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   console.log(userInfo);
   return (
-    <div className="h-[88px] flex items-center border-b">
+    <div className="h-[60px] md:h-[88px] flex items-center border-b">
       <div className="flex justify-between w-full items-center px-5 md:px-[30px]">
         {/* login info  */}
         <h2 className="text-2xl md:hidden inline text-[#4285F3]">LOGO</h2>

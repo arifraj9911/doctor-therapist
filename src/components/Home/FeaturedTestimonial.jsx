@@ -11,17 +11,19 @@ const FeaturedTestimonial = () => {
       .then((data) => setTestimonials(data));
   }, []);
   return (
-    <div className="mb-[30px] hidden md:block">
-      <h2 className="text-lg font-medium mb-4">Featured Testimonial</h2>
-      <div className="bg-white rounded-lg p-[30px]">
+    <div className="mb-[30px] ">
+      <h2 className="text-lg font-medium px-4 md:px-0 mb-4">
+        Featured Testimonial
+      </h2>
+      <div className="bg-white rounded-lg p-3 md:p-[30px]">
         <div className="grid grid-rows-2   gap-5">
           {testimonials.map((testimonial, index) => (
             <div
               className="flex gap-4 p-[10px] items-center  rounded-lg border"
               key={index}
             >
-              <div className="w-full">
-                <img src={testimonial.image} alt="" className="w-full" />
+              <div className="w-full h-full">
+                <img src={testimonial.image} alt="" className="w-full h-full" />
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-xs text-[#5C635A]">{testimonial.address}</p>

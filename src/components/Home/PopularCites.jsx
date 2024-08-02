@@ -24,8 +24,8 @@ const PopularCites = () => {
   ];
 
   return (
-    <div className="hidden md:block">
-      <h2 className="text-lg font-medium mb-4">Popular Cities</h2>
+    <div className="">
+      <h2 className="text-lg font-medium mb-4 px-4 md:px-0">Popular Cities</h2>
       <div className="grid grid-cols-3 gap-y-5 rounded-lg p-[30px] bg-white">
         {popularCities.map((city, index) => (
           <span
