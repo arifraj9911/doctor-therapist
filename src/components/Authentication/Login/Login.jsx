@@ -2,10 +2,40 @@ import { FcGoogle } from "react-icons/fc";
 import loginImage from "../../../assets/images/login.png";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../provider/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
   const [passView, setPassView] = useState(false);
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signIn(email, password)
+      .then((res) => {
+        console.log(res.user);
+        if (res.user) {
+          toast.success("Login Successfully");
+          form.reset();
+        }
+      })
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Login Successfully");
+      })
+      .catch((err) => toast.error(err.message));
+  };
 
   const handleViewPassword = () => {
     setPassView(!passView);
@@ -21,7 +51,10 @@ const Login = () => {
           <h4 className="text-3xl my-3 font-bold">Log In To Your Account</h4>
           <p>Welcome Back! Select a method to log in:</p>
           <div className="flex gap-6  items-center mt-6">
-            <div className="flex shadow-md justify-center rounded-lg items-center gap-2 bg-gradient-to-l  from-[#FFFFFF] to-[#E4E4E4] w-full py-3 px-5">
+            <div
+              onClick={handleGoogleLogin}
+              className="flex shadow-md justify-center rounded-lg items-center gap-2 bg-gradient-to-l  from-[#FFFFFF] to-[#E4E4E4] w-full py-3 px-5"
+            >
               <FcGoogle />
               <button>Google</button>
             </div>
@@ -32,7 +65,7 @@ const Login = () => {
           </div>
           <div className="divider my-8">or Continue with Email</div>
           {/* login form */}
-          <form>
+          <form onSubmit={handleSignIn}>
             <div className="flex flex-col gap-1">
               <label className="text-[16px] font-semibold" htmlFor="email">
                 Email
@@ -83,7 +116,10 @@ const Login = () => {
             </div>
 
             <div className="mt-10 w-3/4 mx-auto">
-              <button className="px-4 py-2 w-full text-[16px] rounded-[10px] text-white bg-[#156BCA]">
+              <button
+                type="submit"
+                className="px-4 py-2 w-full text-[16px] rounded-[10px] text-white bg-[#156BCA]"
+              >
                 Sing In
               </button>
             </div>

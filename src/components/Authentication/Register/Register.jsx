@@ -15,6 +15,7 @@ const Register = () => {
     e.preventDefault();
 
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
     const confirmPassword = form.confirm_password.value;
@@ -26,6 +27,7 @@ const Register = () => {
         .then((res) => {
           console.log(res.user);
           if (res.user) {
+            localStorage.setItem("userInfo",JSON.stringify({ name, email }));
             toast.success("Account Create Successfully");
             form.reset();
           }
