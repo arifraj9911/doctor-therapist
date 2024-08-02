@@ -75,8 +75,12 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div className="w-4/5">
-          <img className="w-4/5 mx-auto " src={loginImage} alt="" />
+        <div className="w-4/5 relative">
+          <img className="w-4/5 mx-auto blur-[6px]" src={loginImage} alt="" />
+          <p className="w-1/3 bg-black text-white p-5 rounded-lg absolute top-72 left-52 opacity-70 text-[16px]">
+            <span className="text-[#156BCA]">Sign In</span> to view all the
+            message therapist
+          </p>
         </div>
       </div>
     </div>
