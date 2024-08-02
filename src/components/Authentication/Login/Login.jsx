@@ -52,7 +52,7 @@ const Login = () => {
               <input
                 type={`${passView ? "text" : "password"}`}
                 className="input input-bordered outline-none focus:outline-none btn-md"
-                name="email"
+                name="password"
                 placeholder="Enter your password"
                 id=""
               />
